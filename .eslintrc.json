@@ -1,0 +1,45 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "testing-library", "import"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "plugin:testing-library/react",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/consistent-type-imports": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-key": "error",
+    "react/prop-types": "off",
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "newlines-between": "always"
+      }
+    ]
+  },
+  "env": {
+    "jest": true
+  }
+}
+
+// {
+//     "parser": "@typescript-eslint/parser", // Use the TypeScript parser
+//     "plugins": ["@typescript-eslint"],    // Enable TypeScript ESLint plugin
+//     "extends": [
+//       "next/core-web-vitals",             // Next.js recommended rules
+//       "plugin:@typescript-eslint/recommended", // TypeScript recommended rules
+//       "eslint:recommended"                // ESLint recommended rules
+//     ],
+//     "rules": {
+//       // Add custom rules here (optional)
+//       "@typescript-eslint/no-unused-vars": "warn", // Warn about unused variables
+//       "react/react-in-jsx-scope": "off"           // Next.js doesn't require React import
+//     }
+//   }
