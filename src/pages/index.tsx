@@ -1,11 +1,16 @@
 import '../styles/pages/index.module.css';
 
 import Layout from '../layouts/layout';
+import About from '../components/section/aboutSection'
+import Skill from '../components/section/skillsSection'
+import Portfolio from '../components/section/portfolioSection'
 
 const index = () => {
   return (
     <Layout>
-      <h1>Welcome to the Home Page!</h1>
+      <About />
+      <Skill />
+      <Portfolio />
     </Layout>
   );
 };
