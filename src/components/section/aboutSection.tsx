@@ -4,9 +4,13 @@ import ProfilePicture from "../ui/circularImage";
 
 import ReusableSection from "./reusableFeatureSection";
 
-const AboutSection: React.FC = () => {
+interface AboutSectionProps {
+    id?: string; // Allow id to be passed
+}
+
+const AboutSection: React.FC<AboutSectionProps> = ({ id }) => {
     return (
-        <section className="flex flex-col md:flex-row items-center justify-center gap-8 p-6">
+        <section id={id} className="flex flex-col md:flex-row items-center justify-center gap-8 p-6">
             {/* Left Side: Profile Picture */}
             <ProfilePicture imageSrc="/images/profilePicture.jpg" altText="My Profile Picture" width={384} height={384} />
 

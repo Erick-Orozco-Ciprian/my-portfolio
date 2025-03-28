@@ -1,16 +1,15 @@
 import '../styles/pages/index.module.css';
 
 import Layout from '../layouts/layout';
-import About from '../components/section/aboutSection'
-import Skill from '../components/section/skillsSection'
-import Portfolio from '../components/section/portfolioSection'
+import Intro from '../components/section/introSection'
+import Introduction from '../components/section/introductionSection'
+
 
 const index = () => {
   return (
     <Layout>
-      <About />
-      <Skill />
-      <Portfolio />
+      <Intro />
+      <Introduction id="about" />
     </Layout>
   );
 };
