@@ -16,7 +16,7 @@ const circularImage: React.FC<circularImageProps> = ({ imageSrc, altText, width,
                 alt={altText}
                 width={width} //Default 192
                 height={height} //Default 192
-                objectFit="cover"
+                style={{ objectFit: "cover" }}
             />
         </div>
     )

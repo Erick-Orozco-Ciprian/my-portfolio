@@ -1,17 +1,23 @@
-import '../styles/pages/index.module.css';
+import Layout from "../layouts/layout";
+import AboutPreview from "../components/section/aboutPreview";
+import FeaturedProjects from "../components/section/featuredProjects";
+import ContactForm from "../components/section/contactForm";
+import IntroSection from "../components/section/introSection";
 
-import Layout from '../layouts/layout';
-import Intro from '../components/section/introSection'
-import Introduction from '../components/section/introductionSection'
-
-
-const index = () => {
+export default function Home() {
   return (
     <Layout>
-      <Intro />
-      <Introduction id="about" />
+      {/* Hero Section / Intro */}
+      <IntroSection />
+
+      {/* About Preview Section */}
+      <AboutPreview />
+
+      {/* Featured Projects */}
+      <FeaturedProjects />
+
+      {/* Contact Form */}
+      <ContactForm />
     </Layout>
   );
-};
-
-export default index;
+}

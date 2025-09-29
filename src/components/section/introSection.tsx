@@ -1,62 +1,52 @@
 "use client";
-import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
-import { ChevronDownIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const IntroSection = () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth < 768);
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    const scrollToAbout = () => {
-        document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-    };
-
     return (
-        <section className="flex flex-col items-center justify-center h-screen w-full text-center bg-gray-900 text-white">
-            <motion.h1
-                className="text-4xl md:text-6xl font-semibold"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-            >
-                Hi There!
-            </motion.h1>
+        <section className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 py-20">
+            {/* Profile Picture */}
+            <div className="flex-shrink-0 mb-8 md:mb-0">
+                <Image
+                    src="/images/profilePicture.jpg"
+                    alt="Profile Picture"
+                    width={250}
+                    height={250}
+                    className="rounded-full border-4 border-[#E07A5F] shadow-lg"
+                />
+            </div>
 
-            <motion.h1
-                className="text-4xl md:text-6xl font-semibold"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.5 }}
+            {/* Greeting & Buttons */}
+            <motion.div
+                className="text-left max-w-xl"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
             >
-                I’m{" "}
-                <span className="text-blue-400 font-bold">Erick</span>, nice to meet you.
-            </motion.h1>
+                <h1 className="text-4xl font-bold text-[#3D405B] mb-4">
+                    Hi, I’m <span className="text-[#E07A5F]">Erick</span> 👋
+                </h1>
+                <p className="text-lg text-[#3D405B] mb-6">
+                    I’m a cybersecurity student and web developer passionate about building secure, user-friendly applications.
+                </p>
 
-            <motion.p
-                className="mt-10 text-lg md:text-2xl text-gray-400"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 4 }}
-            >
-                View my work 🙂
-            </motion.p>
-
-            <motion.button
-                onClick={scrollToAbout}
-                className="mt-4 p-3 rounded-full bg-blue-500 hover:bg-blue-600 text-white transition duration-300"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 4.1 }}
-            >
-                <ChevronDownIcon className="w-10 h-10" />
-            </motion.button>
+                <div className="flex space-x-4">
+                    <Link
+                        href="/about"
+                        className="px-5 py-2 rounded-lg bg-[#E07A5F] text-white hover:bg-[#D85B46] transition"
+                    >
+                        About Me
+                    </Link>
+                    <Link
+                        href="/projects"
+                        className="px-5 py-2 rounded-lg bg-[#81B29A] text-white hover:bg-[#6A9C84] transition"
+                    >
+                        View Projects
+                    </Link>
+                </div>
+            </motion.div>
         </section>
     );
 };
